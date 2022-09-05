@@ -6,9 +6,12 @@ for ch in exp:
     if ch=='(':
         operator.append(ch)
     elif ch==')':
-        while operator[-1]!='(':
+        while len(operator)>0 and operator[-1]!='(':
             em=operator.pop()
             output.append(em)
+        if len(operator)==0:
+            print("not valid")
+            exit()
         operator.pop()
     elif (ch=='*' or ch=='/' or ch=='+' or ch=='-'):
         while len(operator)>0 and priority[operator[-1]]>=priority[ch]:
@@ -17,9 +20,13 @@ for ch in exp:
         operator.append(ch)
     else:
         output.append(ch)
-while (len(operator)!=0):
-    em=operator.pop()
-    output.append(em)
+for i in operator:
+    if i=='(':
+        print("in valid")
+        exit()
+while len(operator)!=0:
+    m=operator.pop()
+    output.append(m)
 for char in output:
     print(char,end='')
 

@@ -8,10 +8,14 @@ class Stack:
         else:
             self.stack.append(data)
     def isempty(self):
-        return len(self.stack)==0
+        if len(self.stack)==0:
+            return True
+        else:
+            return False
     def pop(self):
         if len(self.stack)==0:
             print("empty stack")
+            return 
         else:
             v=self.stack.pop(-1)
             print(v)

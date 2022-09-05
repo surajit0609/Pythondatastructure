@@ -7,8 +7,8 @@ def stack_balancing(exp):
         else:
             if len(stack)==0:
                 return False
-            elif len(exp)%2!=0:
-                return False
+            # elif len(exp)%2!=0:
+            #     return False
             elif (stack[-1]=='(' and char == ')') or (stack[-1]=='{' and char == '}') or (stack[-1]=='[' and char == ']') :
                  stack.pop()
             else:
@@ -20,7 +20,7 @@ def stack_balancing(exp):
         # print("not balance")
         return False
 __name__ == "__main__"
-exp='({[])}'
+exp='({[]})'
 
 if stack_balancing(exp):
     print('balanc')
